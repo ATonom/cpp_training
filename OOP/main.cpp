@@ -1,7 +1,9 @@
-// Раскомментируй нужный пример
-#define POLIMORPHISM
+//  Раскомментируй нужный пример
+//#define POLIMORPHISM    //  Пример полиморфизма
+#define INHERITANCE //  Пример наследования
 
 #include "examples.h"
+using namespace examples;
 
 int main()
 {

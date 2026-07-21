@@ -1,5 +1,7 @@
 #include "Base.h"
 
+using namespace pmm;
+
 void Base::print_name() const
 {
     print("Class name: ", get_name(), " id: ", _id, "\n");

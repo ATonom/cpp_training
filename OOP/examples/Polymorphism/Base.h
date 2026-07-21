@@ -1,6 +1,8 @@
 #pragma once
 #include "utility.h"
 
+namespace pmm
+{
 class Base
 {
 public:
@@ -15,6 +17,9 @@ private:
     static size_t _count;
     size_t _id;
 };
+}
+
+
 
 /*Размер 16 byte.
 * Base:

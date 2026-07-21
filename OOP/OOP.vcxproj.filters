@@ -24,6 +24,15 @@
     <ClCompile Include="examples\Polymorphism\Derived.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="examples\Inheritance\Core\World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="examples\Inheritance\Core\Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="examples\Inheritance\Actor\Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
@@ -42,6 +51,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="examples\utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="examples\Inheritance\Inheritance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="examples\Inheritance\Core\World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="examples\Inheritance\InhTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="examples\Inheritance\Core\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="examples\Inheritance\Actor\Actor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

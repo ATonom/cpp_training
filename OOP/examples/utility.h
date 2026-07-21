@@ -3,15 +3,22 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <cstdint>
+#include <typeinfo>
 
 //  string  ################################
+
 using String = std::string;
 
+
 //  vector  ################################
+
 template <typename T>
-using Vector = std::vector<T>;
+using TVector = std::vector<T>;
+
 
 //  iostream  ##############################
+
 inline void print() {};
 
 template <typename T, typename... Args>
@@ -21,13 +28,19 @@ inline void print(const T& first, const Args&... rest)
     print(rest...);
 }
 
+
 //  memory  ##############################
+
 template <typename Ty>
-using Shared_Ptr = std::shared_ptr<Ty>;
+using TShared_Ptr = std::shared_ptr<Ty>;
+
+template <typename Ty>
+using TWeak_Ptr = std::weak_ptr<Ty>;
 
 
 template <typename T>
-Shared_Ptr<T> make_sh_ptr()
+TShared_Ptr<T> make_sh_ptr()
 {
+    //print("Make shared pointer: ", typeid(T).name(), ".\n");
     return std::make_shared<T>();
 }

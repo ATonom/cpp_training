@@ -1,6 +1,8 @@
 #pragma once
 #include "Base.h"
 
+namespace pmm
+{
 class Derived : public Base
 {
 public:
@@ -10,6 +12,9 @@ protected:
 private:
     String _name = "Derived";
 };
+}
+
+
 
 /*Размер 56 byte.
 * Base:
