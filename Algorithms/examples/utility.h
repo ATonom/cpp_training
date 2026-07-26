@@ -51,3 +51,16 @@ template< typename F, typename T>
 concept conc_binary_comp = requires(F f, T a, T b) {
     { f(a, b) } -> std::same_as<bool>;
 };
+
+
+// Тестовый составной концепт
+template <typename F, typename T>
+concept conc_test = conc_binary_comp<F, T> && conc_op_greater<T>;
+
+
+template <typename F, typename T>
+requires conc_test<F,T>
+bool test(T a, T b, F f)
+{
+    return f(a, b);
+}

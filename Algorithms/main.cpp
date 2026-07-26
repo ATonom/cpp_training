@@ -1,5 +1,5 @@
 //  Раскомментируй нужный пример
-#define SORTING    //  Пример полиморфизма
+#define SORTING_1    //  Пример использования функции std::sort.
 
 #include "examples.h"
 using namespace examples;

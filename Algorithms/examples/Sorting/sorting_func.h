@@ -5,7 +5,9 @@
 namespace sort
 {
 
-// Пример использования функции std::sort по умолчанию (при помощи оператора "<").
+// SORTING_1 #############################################################################
+// Пример использования функции std::sort.
+
 template <typename T>
 void do_sort(const std::vector<T>& vec, std::string msg = "std::sort(begin, end) result:")
 {
@@ -17,7 +19,7 @@ void do_sort(const std::vector<T>& vec, std::string msg = "std::sort(begin, end)
     print_vector(vec1);
 }
 
-// Пример использования функции std::sort при помощи предиката (компаратора). 
+
 template <typename T, conc_binary_comp<T> F>
 void do_sort(const std::vector<T>& vec, F comp, std::string msg = "std::sort(begin, end, comp) result:")
 {
@@ -28,6 +30,10 @@ void do_sort(const std::vector<T>& vec, F comp, std::string msg = "std::sort(beg
 
     print_vector(vec1);
 }
+
+// #######################################################################################
+
+
 
 
 } // namespace sort
