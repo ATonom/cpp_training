@@ -8,12 +8,48 @@
 #include <algorithm>
 #include <concepts>
 
+//  My concepts  ##############################
+
+// Объекты данного типа можно сравнить при помощи оператора< (возвращает bool).
+template <typename T>
+concept conc_op_less = requires(T a, T b) {
+    { a < b } -> std::same_as<bool>;
+};
+
+// Объекты данного типа можно сравнить при помощи оператора> (возвращает bool).
+template <typename T>
+concept conc_op_greater = requires(T a, T b) {
+    { a > b } -> std::same_as<bool>;
+};
+
+// Объект данного типа можно вызвать при помощи оператора() (возвращает bool).
+template <typename F, typename T>
+concept conc_binary_comp = requires(F f, T a, T b) {
+    { f(a, b) } -> std::same_as<bool>;
+};
+
+// Объект данного типа можно передавать в std::ostream при помощи оператора<<.
+template <typename T>
+concept conc_os_printable = requires(T t, std::ostream& os) {
+    { os << t } -> std::same_as<std::ostream&>;
+};
+
+// Тестовый составной концепт
+template <typename F, typename T>
+concept conc_test = conc_binary_comp<F, T> && conc_op_greater<T>;
+
+template <typename F, typename T>
+    requires conc_test<F, T>
+bool test(T a, T b, F f)
+{
+    return f(a, b);
+}
 
 //  iostream  ##############################
 
 inline void print() {};
 
-template <typename T, typename... Args>
+template <conc_os_printable T, conc_os_printable... Args>
 inline void print(const T& first, const Args&... rest)
 {
     std::cout << first;
@@ -30,37 +66,4 @@ void print_vector(std::vector<T> vec)
         print(v, " ");
     }
     print("\n");
-}
-
-//  My concepts  ##############################
-
-//Объекты данного типа можно сравнить при помощи оператора< (возвращает bool).
-template <typename T>
-concept conc_op_less = requires(T a, T b) {
-    { a < b } -> std::same_as<bool>;
-};
-
-// Объекты данного типа можно сравнить при помощи оператора> (возвращает bool).
-template <typename T>
-concept conc_op_greater = requires(T a, T b) {
-    { a > b } -> std::same_as<bool>;
-};
-
-// Объект данного типа можно вызвать при помощи оператора() (возвращает bool).
-template< typename F, typename T>
-concept conc_binary_comp = requires(F f, T a, T b) {
-    { f(a, b) } -> std::same_as<bool>;
-};
-
-
-// Тестовый составной концепт
-template <typename F, typename T>
-concept conc_test = conc_binary_comp<F, T> && conc_op_greater<T>;
-
-
-template <typename F, typename T>
-requires conc_test<F,T>
-bool test(T a, T b, F f)
-{
-    return f(a, b);
 }

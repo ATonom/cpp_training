@@ -1,13 +1,14 @@
 #pragma once
 #include "utility.h"
 #include "sorting_func.h"
+#include "test_types.h"
 
 namespace sort
 {
 
 inline void do_sorting_example_1()
 {
-    print("[Example of using the std::sort function] \n");
+    print("[Example N1 of using the std::sort function] \n");
 
     
     std::vector<int> vec{ 1, 4, 7, 3, 6, 8, 9, 23, 7, 8, 2, 56, 67 };       // Исходный вектор <int>.
@@ -26,5 +27,16 @@ inline void do_sorting_example_1()
     // test(2, 1, func_higher<int>);  // корректный вызов
     // test(2.0, 1, func_higher<int>);  // !корректный вызов
 }
+
+inline void do_sorting_example_2()
+{
+    print("[Example N2 of using the std::sort function] \n");
+
+    using test_int_type = test_type<int>;
+
+    std::vector<test_int_type> vec{ test_int_type(1), test_int_type(4), test_int_type(7) };
+    print_vector(vec);
+}
+
 
 } // namespace sort

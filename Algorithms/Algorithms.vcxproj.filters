@@ -35,5 +35,8 @@
     <ClInclude Include="examples\Sorting\sorting_func.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="examples\Sorting\test_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

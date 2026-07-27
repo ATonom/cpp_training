@@ -134,6 +134,7 @@
     <ClInclude Include="examples\Sorting\predicates.h" />
     <ClInclude Include="examples\Sorting\sorting_examples.h" />
     <ClInclude Include="examples\Sorting\sorting_func.h" />
+    <ClInclude Include="examples\Sorting\test_types.h" />
     <ClInclude Include="examples\utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
