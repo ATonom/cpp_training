@@ -35,7 +35,13 @@ inline void do_sorting_example_2()
     using test_int_type = test_type<int>;
 
     std::vector<test_int_type> vec{ test_int_type(1), test_int_type(4), test_int_type(7) };
+    print("Unsorted vector<", typeid(test_int_type).name(), ">:", "\n");
     print_vector(vec);
+
+    do_sort(vec);                                       // Сортировка по умолчанию.
+    do_sort(vec, lambda_func_higher<test_int_type>);    // Сортировка при помощи лямда функции.
+    do_sort(vec, func_higher<test_int_type>);           // Сортировка при помощи функции.
+    do_sort(vec, functor_higher<test_int_type>());      // Сортировка при помощи класса-функции.
 }
 
 

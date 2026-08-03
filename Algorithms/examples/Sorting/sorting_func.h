@@ -8,7 +8,7 @@ namespace sort
 // SORTING_1 #############################################################################
 // Пример использования функции std::sort.
 
-template <typename T>
+template <conc_op_less T>
 void do_sort(const std::vector<T>& vec, std::string msg = "std::sort(begin, end) result:")
 {
     print("\n", msg, "\n");
